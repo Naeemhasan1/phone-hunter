@@ -8,7 +8,7 @@ const loadphones = async(searchText,dataLimit) =>{
 const displayphones = (phones, dataLimit) =>{
     const phonescontainer = document.getElementById('phone-container');
     phonescontainer.textContent='';
-    // display 5 phone only
+    // display 10 phone only
     const showAll = document.getElementById('show-all');
     if (dataLimit && phones.length>10) {
       phones=phones.slice(0,10);
@@ -99,9 +99,23 @@ document.getElementById('btn-search').addEventListener('click',function () {
     displayPhoneDetails(data.data);
 
  }
-
+// phone Details
  const displayPhoneDetails = phones =>{
     console.log(phones);
+    const 
+    modalTitle=document.getElementById('phoneDetailModalLabel');
+    modalTitle.innerText=phones.name;
+    const phoneDetails = document.getElementById('phone-details');
+    phoneDetails.innerHTML=`
+    <p>Release Date:${phones.releaseDate ? phones.releaseDate :'no Release date found'
+      }</p>
+    <p>storages
+    :${phones.mainFeatures.memory
+      ? phones.mainFeatures.memory
+      :'no mainFeatures memory are found'
+      }</p>`
+
+    
  }
 
 //  loadphones();
