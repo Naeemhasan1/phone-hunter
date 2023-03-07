@@ -60,7 +60,7 @@ const processSearch = (dataLimit)=>{
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value;
   loadphones(searchText,dataLimit);
-
+  
 }
 
 
