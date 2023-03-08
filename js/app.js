@@ -1,16 +1,17 @@
-const loadphones = async(searchText,dataLimit) =>{
+const loadphones = async(searchText,dataLimit1) =>{
     const url=`https://openapi.programming-hero.com/api/phones?search=${searchText}`
     const res = await fetch(url);
     const data = await res.json();
-    displayphones (data.data, dataLimit);
+    displayphones (data.data, dataLimit1);
 }
 
-const displayphones = (phones, dataLimit) =>{
+const displayphones = (phones, dataLimit1) =>{
     const phonescontainer = document.getElementById('phone-container');
     phonescontainer.textContent='';
     // display 10 phone only
     const showAll = document.getElementById('show-all');
-    if (dataLimit && phones.length>10) {
+    // console.log(dataLimit1,phones.length);
+    if (dataLimit1 && phones.length>10) {
       phones=phones.slice(0,10);
       showAll.classList.remove('d-none');
     } else {
@@ -54,12 +55,12 @@ const displayphones = (phones, dataLimit) =>{
     togglespiner(false); 
 }
 
-const processSearch = (dataLimit)=>{
+const processSearch = (dataLimit1)=>{
 
   togglespiner(true);
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value;
-  loadphones(searchText,dataLimit);
+  loadphones(searchText,dataLimit1);
   
 }
 
