@@ -119,4 +119,13 @@ document.getElementById('btn-search').addEventListener('click',function () {
     
  }
 
+  const a = 9;
+  const b = 15;
+  if (a && b>10) {
+    console.log(`a and b is greater than 10`);
+  } else {
+    console.log(`this is not and condition`);
+  }
+ 
+
 //  loadphones();
